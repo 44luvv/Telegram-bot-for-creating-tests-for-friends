@@ -70,7 +70,7 @@ class Database:
     def get_question(self, unique_id):
         with self.connection.cursor() as cur:
             cur.execute(
-                'SELECT question_text FROM questions WHERE unique_id = %s',
+                'SELECT question_text FROM questions WHERE unique_id = %s ORDER BY id',
                 (unique_id,))
             question = cur.fetchall()
             return [q[0] for q in question] if question else None
@@ -78,7 +78,7 @@ class Database:
     def get_answer(self, unique_id):
         with self.connection.cursor() as cur:
             cur.execute(
-                'SELECT answer_text FROM answers WHERE unique_id = %s',
+                'SELECT answer_text FROM answers WHERE unique_id = %s ORDER BY id',
                 (unique_id,))
             answer = cur.fetchall()
             return [a[0] for a in answer] if answer else None
@@ -86,7 +86,7 @@ class Database:
     def get_correct_answer(self, unique_id):
         with self.connection.cursor() as cur:
             cur.execute(
-                'SELECT correct_answer FROM answers WHERE unique_id = %s',
+                'SELECT correct_answer FROM answers WHERE unique_id = %s ORDER BY id',
                 (unique_id,))
             correct = cur.fetchall()
             return [c[0] for c in correct] if correct else None
