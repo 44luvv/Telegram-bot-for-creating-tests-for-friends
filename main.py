@@ -158,7 +158,6 @@ def finish_question(message, answers, correct):
 
 @bot.message_handler(func=lambda message: message.text == 'Delete Test 🗑')
 def delete_test_handler(message):
-    # Показываем список тестов пользователя
     tests = db.get_user_tests(message.from_user.id)
 
     if tests:

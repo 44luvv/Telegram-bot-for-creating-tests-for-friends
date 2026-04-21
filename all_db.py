@@ -102,11 +102,9 @@ class Database:
 
     def get_all_id(self):
         with self.connection.cursor() as cur:
-            cur.execute(
-                'SELECT unique_id FROM tests'
-            )
+            cur.execute('SELECT unique_id FROM tests')
             ids = cur.fetchall()
-            return [i[0] for i in ids] if ids else None
+            return [i[0] for i in ids] if ids else []
 
     def delete_test(self, unique_id):
         with self.connection.cursor() as cur:
