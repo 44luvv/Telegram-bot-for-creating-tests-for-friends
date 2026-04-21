@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📋 CourseBot
+# 📋 Telegram-bot-for-creating-tests-for-friends
 
 <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 <img src="https://img.shields.io/badge/pyTelegramBotAPI-4.x-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/>
